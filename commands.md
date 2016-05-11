@@ -30,6 +30,9 @@ git checkout -b B3 M3.1
 
 http://localhost:8989/turbine.stream
 
+service discovery web app: 
+http://localhost:8761
+
 
 # Part 4
 
