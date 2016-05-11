@@ -41,3 +41,18 @@ link: http://callistaenterprise.se/blogg/teknik/2015/06/08/building-microservice
 $ git clone https://github.com/callistaenterprise/blog-microservices
 $ cd blog-microservices
 $ git checkout -b B6 M6
+
+
+
+
+
+
+http://localhost:8765/api/product/123
+http://localhost:8765/productapi/product/123
+
+
+
+
+
+
+
