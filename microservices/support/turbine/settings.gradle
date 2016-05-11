@@ -1,0 +1,9 @@
+rootProject.name = 'turbine'
+
+gradle.ext.groupId = 'com.lidl.eci'
+gradle.ext.version = '0.1.1-SNAPSHOT'
+gradle.ext.artifactId = 'turbine'
+
+gradle.ext.api_service_version = '0.1.1-SNAPSHOT'
+gradle.ext.api_service_artifactId = 'turbine'
+gradle.ext.api_service_artifactFileName = 'turbine'
