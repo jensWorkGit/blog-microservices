@@ -28,6 +28,9 @@ cd blog-microservices
 git checkout -b B3 M3.1
 ./build-all.sh
 
+http://localhost:8989/turbine.stream
+
+
 # Part 4
 
 link: http://callistaenterprise.se/blogg/teknik/2015/06/08/building-microservices-part-4-dockerize-your-microservices/
