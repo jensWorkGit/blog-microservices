@@ -1,21 +1,12 @@
 buildscript {
     ext {
-        springBootVersion = '1.3.4.RELEASE'
+        springBootVersion = '1.2.2.RELEASE'
     }
     repositories {
-        jcenter()
-        maven {
-            url nexusUrl
-            credentials {
-                username nexusUser
-                password nexusPassword
-            }
-        }
+        mavenCentral()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath("io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE")
-        classpath("org.hibernate.build.gradle:gradle-maven-publish-auth:2.0.1")
     }
 }
 
@@ -33,26 +24,13 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
-    maven {
-        url nexusUrl
-        credentials {
-            username nexusUser
-            password nexusPassword
-        }
-    }
+    mavenCentral()
 }
 
-ext.pomSettings = new Properties()
-pomSettings.load(file("settings.gradle").newDataInputStream())
-def service_version = pomSettings['gradle.ext.api_service_version'].replaceAll(/'/, '')
-def service_artifactFileName = pomSettings['gradle.ext.api_service_artifactFileName'].replaceAll(/'/, '')
-def jarName = pomSettings['gradle.ext.artifactId'].replaceAll(/'/, '')
-def jarVersion = pomSettings['gradle.ext.version'].replaceAll(/'/, '')
-group = pomSettings['gradle.ext.groupId'].replaceAll(/'/, '')
-version = '0.0.1-SNAPSHOT'
-
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-web") {
+        exclude module: 'spring-boot-starter-tomcat'
+    }
     compile("org.springframework.boot:spring-boot-starter-undertow")
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile('org.springframework.cloud:spring-cloud-starter-turbine-amqp:1.0.0.RELEASE')
